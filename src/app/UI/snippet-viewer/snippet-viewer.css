@@ -1,0 +1,81 @@
+.snippet-viewer {
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #1e1e1e; /* VS Code dark background */
+    font-family: "Consolas", "Courier New", monospace;
+    color: #d4d4d4; /* Default text color */
+    max-width: 800px;
+  }
+  
+  .snippet-preview {
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 16px;
+    background-color: #252526; /* Slightly lighter dark background */
+    margin-bottom: 16px;
+    overflow-x: auto;
+  }
+  
+  .snippet-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+  
+  .copy-button {
+    background-color: #007acc; /* VS Code blue */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .copy-button:hover {
+    background-color: #005a9e;
+  }
+  
+  .copy-button:active {
+    background-color: #003f7f;
+  }
+  
+  .snippet-code {
+    background-color: #1e1e1e; /* VS Code dark background */
+    color: #d4d4d4; /* Default text color */
+    padding: 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .snippet-code .line-number {
+    display: inline-block;
+    width: 30px;
+    text-align: right;
+    margin-right: 10px;
+    color: #858585; /* Line number color */
+    user-select: none;
+  }
+  
+  .snippet-code code {
+    display: inline-block;
+    color: #dcdcaa; /* Default code color */
+  }
+  
+  .snippet-code .keyword {
+    color: #569cd6; /* Blue for keywords */
+  }
+  
+  .snippet-code .string {
+    color: #ce9178; /* Orange for strings */
+  }
+  
+  .snippet-code .comment {
+    color: #6a9955; /* Green for comments */
+  }

@@ -1,0 +1,77 @@
+.components-list {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+
+    .card {
+        width: 200px;
+        height: 300px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid #ccc;
+    }
+    & .card:hover {
+        background-color: #e0e0e0;
+        cursor: pointer;
+    }
+    & .card h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+
+    @media (prefers-color-scheme: dark) {
+        .card{
+          background-color: #2c2c2c; /* Dark background for dark mode */
+          color: #ffffff; /* Light text for dark mode */
+        }
+        .card:hover {
+          background-color: #3c3c3c; /* Darker background on hover for dark mode */
+        }
+        .card h3 {
+          color: #ffffff; /* Light text for dark mode */
+        }
+    }
+}
+
+.react-page-wrapper {
+    display: flex;
+    width: -webkit-fill-available;
+    height: calc(100vh - 60px); /* Full height minus header height */
+    position: fixed;
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        width: -webkit-fill-available;
+        overflow-y: auto;
+    }
+
+    .component-header {
+        margin-top: -20px;
+        margin-left: -20px;
+        margin-right: -20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        padding-bottom: 10px;
+        border-bottom: solid salmon;
+        position: sticky;
+        top: -20px;
+        z-index: 3;
+    }
+    @media (prefers-color-scheme: dark) {
+        .component-header {
+            background-color: #2c2c2c; /* Darker background for header */
+            color: #ffffff; /* Light text for header */
+        }
+    }
+}
