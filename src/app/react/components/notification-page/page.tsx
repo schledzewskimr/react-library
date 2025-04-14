@@ -1,11 +1,10 @@
 'use client';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./notification.css";
 import SnippetViewer from "@/app/UI/snippet-viewer/snippet-viewer";
 import { NotificationComponent } from "../../../../../library/src";
 
 export default function NotificationPageComponent() {
-  const [activeLink, setActiveLink] = useState<string>("/react");
   const [notificationType, setNotificationType] = useState<'info' | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'light' | 'dark'>("info");
   const [notificationMessage, setNotificationMessage] = useState<string>("This is a notification message.");
   const [notificationHeading, setNotificationHeading] = useState<string>("Notification Title");
@@ -21,14 +20,6 @@ export default function NotificationPageComponent() {
       dismissible="${notificationDismissible}"
       onClose={() => setNotificationShow(false)}>
   </NotificationComponent>`;
-
-  useEffect(() => {
-    const updateActiveLink = () => {
-      const hash = window.location.hash.replace("#", "") || "home";
-      setActiveLink(hash);
-    };
-
-  }, []);
 
   return (
     <div>
@@ -55,7 +46,7 @@ export default function NotificationPageComponent() {
             id="notificationType"
             className="form-control custom-select"
             value={notificationType}
-            onChange={(e) => setNotificationType(e.target.value as any)}
+            onChange={(e) => setNotificationType(e.target.value as 'info' | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'light' | 'dark')}
           >
             <option value="info">Info</option>
             <option value="primary">Primary</option>
