@@ -7,10 +7,8 @@ import AboutComponent from "@/app/about/page";
 import HomeComponent from "@/app/home/page";
 import IconsComponent from "@/app/icons/page";
 import ReactComponent from "@/app/react/page";
-import { useRouter } from "next/navigation";
 
 export default function HostPage() {
-  const router = useRouter();
   const [activeLink, setActiveLink] = useState<string>("home");
 
   // Update the active link based on the URL path

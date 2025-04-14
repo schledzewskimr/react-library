@@ -20,40 +20,41 @@ export default function LeftNav({ onSelect, activeItem }: LeftNavProps) {
   const listRefs = useRef<(HTMLLIElement | null)[]>([]);
   const [selected, setSelected] = useState<string>("");
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const currentIndex = pageConfigs.findIndex((item) => item.name === selected);
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        const nextIndex = (currentIndex + 1) % pageConfigs.length;
+        setSelected(pageConfigs[nextIndex].name);
+        listRefs.current[nextIndex]?.focus();
+        onSelect(pageConfigs[nextIndex].name); // Notify parent of the selection
+      } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        const prevIndex = (currentIndex - 1 + pageConfigs.length) % pageConfigs.length;
+        setSelected(pageConfigs[prevIndex].name);
+        listRefs.current[prevIndex]?.focus();
+        onSelect(pageConfigs[prevIndex].name); // Notify parent of the selection
+      }
+    };
+
+    if (activeItem) {
+      setSelected(activeItem);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+
+  }, [activeItem, selected, onSelect]);
+
   const handleSelect = (selected: string) => {
     setSelected(selected);
     const newPath = `/react/${selected}`;
     window.history.pushState({}, "", newPath); // Update the URL without triggering navigation
     onSelect(selected);
   };
-
-  const handleKeyDown = (event: KeyboardEvent) => {
-    const currentIndex = pageConfigs.findIndex((item) => item.name === selected);
-    if (event.key === "ArrowDown") {
-      event.preventDefault();
-      const nextIndex = (currentIndex + 1) % pageConfigs.length;
-      setSelected(pageConfigs[nextIndex].name);
-      listRefs.current[nextIndex]?.focus();
-      onSelect(pageConfigs[nextIndex].name); // Notify parent of the selection
-    } else if (event.key === "ArrowUp") {
-      event.preventDefault();
-      const prevIndex = (currentIndex - 1 + pageConfigs.length) % pageConfigs.length;
-      setSelected(pageConfigs[prevIndex].name);
-      listRefs.current[prevIndex]?.focus();
-      onSelect(pageConfigs[prevIndex].name); // Notify parent of the selection
-    }
-  };
-
-  useEffect(() => {
-    if (activeItem) {
-      setSelected(activeItem);
-    }
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [activeItem]);
 
   return (
     <div className="left-nav">

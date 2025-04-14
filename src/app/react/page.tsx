@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // Import useRouter
 import pageConfigs from "./services/page-config.service";
 import "./react.css";
 import LeftNav from "../UI/left-nav/left-nav";
@@ -10,7 +9,6 @@ import NotificationComponent from "./components/notification-page/page";
 import AccordionPage from "./components/accordion-page/page";
 
 export default function ReactComponent() {
-  const router = useRouter(); // Initialize the router
   const [activeLink, setActiveLink] = useState<string>("react");
   const [selectedComponent, setSelectedComponent] = useState<string | null>(null);
 
@@ -58,7 +56,7 @@ export default function ReactComponent() {
     <div className="react-page-wrapper">
       <LeftNav
         onSelect={(selected) => {
-          handleLinkClick("react", selected);
+          handleLinkClick(activeLink, selected);
         }}
         activeItem={selectedComponent}
       />
@@ -71,7 +69,7 @@ export default function ReactComponent() {
                 <div
                   key={index}
                   className="card"
-                  onClick={() => handleLinkClick("react", item.name)}
+                  onClick={() => handleLinkClick(activeLink, item.name)}
                 >
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
