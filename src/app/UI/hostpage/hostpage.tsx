@@ -7,6 +7,7 @@ import AboutComponent from "@/app/about/page";
 import HomeComponent from "@/app/home/page";
 import IconsComponent from "@/app/icons/page";
 import ReactComponent from "@/app/react/page";
+import HtmlComponent from "@/app/html/page";
 
 export default function HostPage() {
   const [activeLink, setActiveLink] = useState<string>("home");
@@ -33,6 +34,8 @@ export default function HostPage() {
         return <ReactComponent />;
       case "icons":
         return <IconsComponent />;
+      case "html":
+        return <HtmlComponent />;
       default:
         return <HomeComponent />;
     }

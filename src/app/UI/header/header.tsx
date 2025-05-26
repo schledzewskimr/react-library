@@ -31,6 +31,7 @@ export default function Header({ onLinkClick }: HeaderProps) {
                 <li><a href="#" className={activeLink === "home" ? "active" : ""} onClick={(e) => { e.preventDefault(); handleLinkClick('home') }}>Home</a></li>
                 <li><a href="#" className={activeLink === "about" ? "active" : ""} onClick={(e) => { e.preventDefault(); handleLinkClick('about') }}>About</a></li>
                 <li><a href="#" className={activeLink === "react" ? "active" : ""} onClick={(e) => { e.preventDefault(); handleLinkClick('react') }}>React</a></li>
+                <li><a href="#" className={activeLink === "html" ? "active" : ""} onClick={(e) => { e.preventDefault(); handleLinkClick('html') }}>HTML</a></li>
                 <li><a href="#" className={activeLink === "icons" ? "active" : ""} onClick={(e) => { e.preventDefault(); handleLinkClick('icons') }}>Icons</a></li>
             </ul>
             <div className="d-flex items-center space-x-4">

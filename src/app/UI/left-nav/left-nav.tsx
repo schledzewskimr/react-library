@@ -1,5 +1,5 @@
 'use client';
-import pageConfigs from "@/app/react/services/page-config.service";
+import { pageConfigs } from "@/app/react/services/page-config.service";
 import React, { useEffect, useRef, useState } from "react";
 import "./left-nav.css";
 

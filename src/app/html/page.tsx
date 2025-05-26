@@ -1,14 +1,13 @@
 'use client';
-
-import React, { useEffect, useState } from "react";
-import { pageConfigs } from "./services/page-config.service";
-import "./react.css";
+import React, { useState, useEffect } from "react";
+import "./htmlpage.css";
 import LeftNav from "../UI/left-nav/left-nav";
-import ExampleComponent from "./components/example/page";
-import NotificationComponent from "./components/notification-page/page";
-import AccordionPage from "./components/accordion-page/page";
+import { htmlPageConfigs } from "../react/services/page-config.service";
+import NotificationPageComponent from "./htmls/notification-page/page";
+import CardPageComponent from "./htmls/card-page/page";
 
-export default function ReactComponent() {
+
+export default function HtmlComponent() {
   const [activeLink, setActiveLink] = useState<string>("react");
   const [selectedComponent, setSelectedComponent] = useState<string | null>(null);
 
@@ -42,11 +41,13 @@ export default function ReactComponent() {
   const renderPage = () => {
     switch (selectedComponent) {
       case "ExampleComponent":
-        return <ExampleComponent />;
+        return <div>Example Component Placeholder</div>;
       case "Notification":
-        return <NotificationComponent />;
+        return <NotificationPageComponent />;
       case "Accordion":
-        return <AccordionPage />
+        return <div>Accordion Component Placeholder</div>;
+      case "Card":
+        return <CardPageComponent />;
       default:
         return null;
     }
@@ -65,7 +66,7 @@ export default function ReactComponent() {
           <>
             <h1>Components</h1>
             <div className="components-list">
-              {pageConfigs.map((item, index) => (
+              {htmlPageConfigs.map((item, index) => (
                 <div
                   key={index}
                   className="card"

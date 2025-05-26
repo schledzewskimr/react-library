@@ -5,7 +5,6 @@ interface PageConfig {
 }
 
 const pageConfigs: PageConfig[] = [
-
     {
         name: "Accordion",
         description: "An accordion component",
@@ -20,4 +19,23 @@ const pageConfigs: PageConfig[] = [
     },
 ];
 
-export default pageConfigs;
+const htmlPageConfigs: PageConfig[] = [
+    {
+        name: "Accordion",
+        description: "An accordion component",
+    },
+    {
+        name: "ExampleComponent",
+        description: "An example component",
+    },
+    {
+        name: "Notification",
+        description: "A notification component",
+    },
+    {
+        name: "Card",
+        description: "A card component",
+    },
+];
+
+export { pageConfigs, htmlPageConfigs };

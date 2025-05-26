@@ -2690,6 +2690,78 @@
       border-bottom-left-radius: 0;
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    .card {
+      background-color: #343a40;
+      border-color: rgba(255, 255, 255, 0.125);
+    }
+    .card > hr {
+      border-color: rgba(255, 255, 255, 0.125);
+    }
+    .card-body {
+      color: #f8f9fa;
+    }
+    .card-title {
+      color: #f8f9fa;
+    }
+    .card-subtitle {
+      color: #adb5bd;
+    }
+    .card-text {
+      color: #f8f9fa;
+    }
+    .card-link {
+      color: #0d6efd;
+    }
+    .card-link:hover, .card-link:focus {
+      color: #0a58ca;
+    }
+    .card-header {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.125);
+    }
+    .card-footer {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.125);
+    }
+    .card-header-tabs .nav-link {
+      color: #f8f9fa;
+    }
+    .card-header-tabs .nav-link:hover, .card-header-tabs .nav-link:focus {
+      color: #0d6efd;
+    }
+    .card-header-tabs .nav-link.active {
+      color: #0d6efd;
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .card-header-pills .nav-link {
+      color: #f8f9fa;
+    }
+    .card-header-pills .nav-link:hover, .card-header-pills .nav-link:focus {
+      color: #0d6efd;
+    }
+    .card-header-pills .nav-link.active {
+      color: #0d6efd;
+      background-color: transparent;
+      border-color: transparent;
+    }
+    .card-img-overlay {
+      color: #f8f9fa;
+    }
+    .card-img-overlay a {
+      color: #0d6efd;
+    }
+    .card-img-overlay a:hover, .card-img-overlay a:focus {
+      color: #0a58ca;
+    }
+    .card-img,
+    .card-img-top,
+    .card-img-bottom {
+      border-color: rgba(255, 255, 255, 0.125);
+    }
+  }
   
   .accordion-button {
     position: relative;
@@ -2799,6 +2871,31 @@
   .accordion-flush .accordion-item .accordion-button {
     border-radius: 0;
   }
+  @media (prefers-color-scheme: dark) {
+  .accordion-item {
+    background-color: #23272f;
+    border-color: #343a40;
+  }
+  .accordion-button {
+    color: #f1f3f5;
+    background-color: #23272f;
+  }
+  .accordion-button:not(.collapsed) {
+    color: #61aaff;
+    background-color: #1a1d23;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.25);
+  }
+  .accordion-button::after {
+    filter: invert(1) grayscale(100%);
+  }
+  .accordion-body {
+    color: #e9ecef;
+    background-color: #23272f;
+  }
+  .accordion-collapse {
+    background-color: #23272f;
+  }
+}
   
   .breadcrumb {
     display: flex;
