@@ -67,7 +67,7 @@ ${builderItems.map(item => {
       <p>Use the <code>titleTemplate</code> and <code>contentTemplate</code> properties to customize the header and body of each item.</p>
       <p>Use the <code>items</code> property to pass an array of items to the accordion.</p>
       <p>Each item can have a <code>title</code>, <code>content</code>, <code>expanded</code>, <code>titleTemplate</code>, and <code>contentTemplate</code>.</p>
-      <p>Here's an example:</p>
+      <p>Here&apos;s an example:</p>
 
       <h3>Simple Accordion</h3>
 
@@ -98,11 +98,11 @@ ${builderItems.map(item => {
             items={[
               {
                 titleTemplate: <strong>Custom Header #1</strong>,
-                contentTemplate: <em>This is the first item's accordion body with a custom header.</em>,
+                contentTemplate: <em>This is the first item&apos;s accordion body with a custom header.</em>,
               },
               {
                 titleTemplate: <strong>Custom Header #2</strong>,
-                contentTemplate: <em>This is the second item's accordion body with a custom header.</em>,
+                contentTemplate: <em>This is the second item&apos;s accordion body with a custom header.</em>,
               },
             ]}></AccordionComponent>
 
@@ -155,7 +155,7 @@ ${builderItems.map(item => {
                 content: "This is the first item's accordion body.",
                 expanded: true,
                 titleTemplate: <strong>Custom Header #1</strong>,
-                contentTemplate: <em>This is the first item's accordion body with a custom header.</em>,
+                contentTemplate: <em>This is the first item&apos;s accordion body with a custom header.</em>,
               },
               {
                 title: "Accordion Item #2",
